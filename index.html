@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,7 +16,9 @@
     footer { background: #111; text-align: center; padding: 15px; font-size: 14px; }
   </style>
 </head>
-<body><header>
+<body>
+
+<header>
   <h1>YNOT CORPORATION</h1>
   <p>PC Optimisation • Gaming Sensi • Performance Tweaks</p>
   <nav>
@@ -24,7 +27,9 @@
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
-</header><section id="services">
+</header>
+
+<section id="services">
   <h2>Our Services</h2>
   <div class="card">
     <h3>Basic PC Optimisation</h3>
@@ -38,59 +43,85 @@
     <h3>Advanced Tweaks</h3>
     <p>Registry tweaks, Windows optimisation, latency reduction, and pro settings.</p>
   </div>
-</section><section id="pricing">
+</section>
+
+<section id="pricing">
   <h2>Pricing</h2>
   <div class="card">
     <p><strong>Basic Optimisation:</strong> ₹499</p>
     <p><strong>Gaming Pro Pack:</strong> ₹799</p>
     <p><strong>Ultimate Tweaks:</strong> ₹1200</p>
-    <a class="btn" href="#contact">Buy Now</a>
+    <a class="btn" href="#payment">Buy Now</a>
   </div>
-</section><section id="about">
+</section>
+
+<section id="about">
   <h2>About Us</h2>
   <div class="card">
     <p><strong>Owner:</strong> ZoRo Ynot</p>
     <p>YNOT CORPORATION is dedicated to helping gamers and PC users achieve maximum performance with safe, tested, and professional optimisation methods.</p>
   </div>
-</section><section id="order">
+</section>
+
+<!-- ✅ PAYMENT SECTION FIRST -->
+<section id="payment">
+  <h2>Pay via UPI</h2>
+  <div class="card">
+    <p>Pay directly using UPI. After payment, fill the order form below to create your Discord ticket.</p>
+
+    <a class="btn" href="upi://pay?pa=6203924526@fam&pn=YNOT%20CORPORATION&am=499&cu=INR&tn=Basic%20PC%20Optimisation">Pay ₹499 – Basic Optimisation</a><br><br>
+    <a class="btn" href="upi://pay?pa=6203924526@fam&pn=YNOT%20CORPORATION&am=799&cu=INR&tn=Gaming%20Pro%20Pack">Pay ₹799 – Gaming Pro Pack</a><br><br>
+    <a class="btn" href="upi://pay?pa=6203924526@fam&pn=YNOT%20CORPORATION&am=1200&cu=INR&tn=Ultimate%20Tweaks">Pay ₹1200 – Ultimate Tweaks</a><br><br>
+
+    <p style="margin-top:15px;font-size:14px;opacity:0.8;">UPI Apps supported: GPay, PhonePe, Paytm, BHIM</p>
+  </div>
+</section>
+
+<!-- ✅ ORDER FORM / DISCORD TICKET SECTION SECOND -->
+<section id="order">
   <h2>Order Confirmation & Discord Ticket</h2>
   <div class="card">
-    <p>After completing the UPI payment, fill the form below. A ticket will be created in our Discord server and our team will contact you.</p><form id="orderForm">
-  <input type="hidden" id="orderid">
-  <label>Full Name</label><br>
-  <input type="text" id="name" required style="width:100%;padding:10px;margin:8px 0;"><br>
+    <p>After completing the UPI payment, fill the form below. A ticket will be created in our Discord server and our team will contact you.</p>
 
-  <label>Email Address</label><br>
-  <input type="email" id="email" required style="width:100%;padding:10px;margin:8px 0;"><br>
+    <form id="orderForm">
+      <input type="hidden" id="orderid">
 
-  <label>Discord Username (e.g. user#1234)</label><br>
-  <input type="text" id="discord" required style="width:100%;padding:10px;margin:8px 0;"><br>
+      <label>Full Name</label><br>
+      <input type="text" id="name" required style="width:100%;padding:10px;margin:8px 0;"><br>
 
-  <label>Service Purchased</label><br>
-  <select id="service" required style="width:100%;padding:10px;margin:8px 0;">
-    <option>Basic Optimisation – ₹499</option>
-    <option>Gaming Pro Pack – ₹799</option>
-    <option>Ultimate Tweaks – ₹1200</option>
-  </select><br>
+      <label>Email Address</label><br>
+      <input type="email" id="email" required style="width:100%;padding:10px;margin:8px 0;"><br>
 
-  <label>UPI Transaction ID</label><br>
-  <input type="text" id="txid" required style="width:100%;padding:10px;margin:8px 0;"><br>
+      <label>Discord Username (e.g. user#1234)</label><br>
+      <input type="text" id="discord" required style="width:100%;padding:10px;margin:8px 0;"><br>
 
-  <button class="btn" type="submit">Create Discord Ticket</button>
-</form>
+      <label>Service Purchased</label><br>
+      <select id="service" required style="width:100%;padding:10px;margin:8px 0;">
+        <option>Basic Optimisation – ₹499</option>
+        <option>Gaming Pro Pack – ₹799</option>
+        <option>Ultimate Tweaks – ₹1200</option>
+      </select><br>
 
-<p style="font-size:14px;margin-top:10px;opacity:0.8;">You must join our Discord after submitting the form.</p>
-<a class="btn" href="https://discord.gg/a6agrMvyPX" target="_blank">Join YNOT CORPORATION Discord</a>
+      <label>UPI Transaction ID</label><br>
+      <input type="text" id="txid" required style="width:100%;padding:10px;margin:8px 0;"><br>
 
+      <button class="btn" type="submit">Create Discord Ticket</button>
+    </form>
+
+    <p style="font-size:14px;margin-top:10px;opacity:0.8;">You must join our Discord after submitting the form.</p>
+    <a class="btn" href="https://discord.gg/a6agrMvyPX" target="_blank">Join YNOT CORPORATION Discord</a>
   </div>
-</section><script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script><script>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
   (function(){ emailjs.init('yt6y9nlRuKVQI73S9lbjT'); })();
   const webhookURL = "https://canary.discord.com/api/webhooks/1458021677710573578/r0NOfCqV73uV-Q4yCX_A2w0FB5rxDJLT5_W8tcA7XVE0rKqqJIn2h-pp6pl_RwMAwM8G";
 
   document.getElementById("orderForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-        const orderId = "YNOT-" + Date.now().toString(36).toUpperCase() + "-" + Math.floor(Math.random()*10000);
+    const orderId = "YNOT-" + Date.now().toString(36).toUpperCase() + "-" + Math.floor(Math.random()*10000);
     document.getElementById("orderid").value = orderId;
 
     const data = {
@@ -98,13 +129,64 @@
       embeds: [{
         title: "YNOT CORPORATION – New Order",
         color: 65280,
-                fields: [
+        fields: [
           { name: "Order ID", value: orderId, inline: false },
           { name: "Name", value: document.getElementById("name").value, inline: true },
           { name: "Email", value: document.getElementById("email").value, inline: true },
           { name: "Discord", value: document.getElementById("discord").value, inline: true },
           { name: "Service", value: document.getElementById("service").value, inline: false },
           { name: "UPI Txn ID", value: document.getElementById("txid").value, inline: false }
+        ],
+        footer: { text: "Auto Ticket • YNOT CORPORATION" }
+      }]
+    };
+
+    emailjs.send('service_lcygci1','template_1b99h2o',{
+      to_email: document.getElementById("email").value,
+      order_id: orderId,
+      service: document.getElementById("service").value,
+      discord: document.getElementById("discord").value
+    });
+
+    fetch(webhookURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    }).then(() => {
+      alert("Ticket created successfully! Please join Discord to continue.");
+      window.open("https://discord.gg/a6agrMvyPX", "_blank");
+    }).catch(() => {
+      alert("Error creating ticket. Please contact support.");
+    });
+  });
+</script>
+
+<script>
+  function payNow(amount) {
+    var options = {
+      "key": "RAZORPAY_KEY_ID_HERE",
+      "amount": amount * 100,
+      "currency": "INR",
+      "name": "YNOT CORPORATION",
+      "description": "PC Optimisation & Gaming Tweaks",
+      "handler": function (response) {
+        alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+      },
+      "theme": {
+        "color": "#00ffcc"
+      }
+    };
+    var rzp = new Razorpay(options);
+    rzp.open();
+  }
+</script>
+
+<footer>
+  © 2026 YNOT CORPORATION | All Rights Reserved
+</footer>
+
+</body>
+</html>
         ],
         footer: { text: "Auto Ticket • YNOT CORPORATION" }
       }]
