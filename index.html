@@ -161,26 +161,6 @@
   });
 </script>
 
-<script>
-  function payNow(amount) {
-    var options = {
-      "key": "RAZORPAY_KEY_ID_HERE",
-      "amount": amount * 100,
-      "currency": "INR",
-      "name": "YNOT CORPORATION",
-      "description": "PC Optimisation & Gaming Tweaks",
-      "handler": function (response) {
-        alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
-      },
-      "theme": {
-        "color": "#00ffcc"
-      }
-    };
-    var rzp = new Razorpay(options);
-    rzp.open();
-  }
-</script>
-
 <footer>
   © 2026 YNOT CORPORATION | All Rights Reserved
 </footer>
