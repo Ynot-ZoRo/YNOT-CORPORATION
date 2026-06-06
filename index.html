@@ -186,6 +186,87 @@
 </footer>
 
 </body>
+</html>      <button class="btn" type="submit">Create Discord Ticket</button>
+    </form>
+
+    <p style="font-size:14px;margin-top:10px;opacity:0.8;">You must join our Discord after submitting the form.</p>
+    <a class="btn" href="https://discord.gg/a6agrMvyPX" target="_blank">Join YNOT CORPORATION Discord</a>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){ emailjs.init('yt6y9nlRuKVQI73S9lbjT'); })();
+  const webhookURL = "https://canary.discord.com/api/webhooks/1458021677710573578/r0NOfCqV73uV-Q4yCX_A2w0FB5rxDJLT5_W8tcA7XVE0rKqqJIn2h-pp6pl_RwMAwM8G";
+
+  document.getElementById("orderForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const orderId = "YNOT-" + Date.now().toString(36).toUpperCase() + "-" + Math.floor(Math.random()*10000);
+    document.getElementById("orderid").value = orderId;
+
+    const data = {
+      content: "🎫 **New Order Ticket Created**",
+      embeds: [{
+        title: "YNOT CORPORATION – New Order",
+        color: 65280,
+        fields: [
+          { name: "Order ID", value: orderId, inline: false },
+          { name: "Name", value: document.getElementById("name").value, inline: true },
+          { name: "Email", value: document.getElementById("email").value, inline: true },
+          { name: "Discord", value: document.getElementById("discord").value, inline: true },
+          { name: "Service", value: document.getElementById("service").value, inline: false },
+          { name: "UPI Txn ID", value: document.getElementById("txid").value, inline: false }
+        ],
+        footer: { text: "Auto Ticket • YNOT CORPORATION" }
+      }]
+    };
+
+    emailjs.send('service_lcygci1','template_1b99h2o',{
+      to_email: document.getElementById("email").value,
+      order_id: orderId,
+      service: document.getElementById("service").value,
+      discord: document.getElementById("discord").value
+    });
+
+    fetch(webhookURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    }).then(() => {
+      alert("Ticket created successfully! Please join Discord to continue.");
+      window.open("https://discord.gg/a6agrMvyPX", "_blank");
+    }).catch(() => {
+      alert("Error creating ticket. Please contact support.");
+    });
+  });
+</script>
+
+<script>
+  function payNow(amount) {
+    var options = {
+      "key": "RAZORPAY_KEY_ID_HERE",
+      "amount": amount * 100,
+      "currency": "INR",
+      "name": "YNOT CORPORATION",
+      "description": "PC Optimisation & Gaming Tweaks",
+      "handler": function (response) {
+        alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+      },
+      "theme": {
+        "color": "#00ffcc"
+      }
+    };
+    var rzp = new Razorpay(options);
+    rzp.open();
+  }
+</script>
+
+<footer>
+  © 2026 YNOT CORPORATION | All Rights Reserved
+</footer>
+
+</body>
 </html>
         ],
         footer: { text: "Auto Ticket • YNOT CORPORATION" }
